@@ -1,6 +1,0 @@
-{
-  "port": 4200,
-  "dbURL": "mongodb+srv://volodymyr:1q2w3e4r@cluster0.onhdj.mongodb.net/school?retryWrites=true&w=majority",
-  "jwtSecretKey" : "SECRET_KEY_MYTEST",
-  "baseUrl": "http://localhost:4200"
-}
