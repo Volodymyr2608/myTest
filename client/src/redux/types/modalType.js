@@ -1,0 +1,4 @@
+export const SHOW_MODAL = 'APP/SHOW_MODAL'
+export const HIDE_MODAL = 'APP/HIDE_MODAL'
+export const SHOW_IS_DELETE = 'APP/SHOW_IS_DELETE'
+export const HIDE_IS_DELETE = 'APP/HIDE_IS_DELETE'

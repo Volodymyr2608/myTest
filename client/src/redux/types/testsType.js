@@ -1,0 +1,6 @@
+export const CREATE_TEST = 'POST/CREATE_TEST'
+export const UPDATE_TEST = 'PUT/UPDATE_TEST'
+export const DELETE_TEST = 'DELETE/DELETE_TEST'
+export const FETCH_TESTS = 'GET/FETCH_TESTS'
+export const ADD_TESTS = 'APP/ADD_TESTS'
+export const SAVE_RESULT = 'POST/SAVE_RESULT'

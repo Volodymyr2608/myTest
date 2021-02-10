@@ -1,0 +1,5 @@
+export const AUTH = 'APP/AUTHORIZATION'
+export const CREATE_USER = 'POST/CREATE_USER'
+export const LOGIN_USER = 'POST/LOGIN_USER'
+export const LOGOUT_USER = 'POST/LOGOUT_USER'
+export const ADD_USER = 'APP/ADD_USER'
