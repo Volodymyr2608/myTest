@@ -1,8 +1,8 @@
 import React, { useEffect, useCallback, useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {ClassroomsTable} from '../../../components/Tables/ClassroomsTable'
-import { showModal } from '../../../redux/actions/modalAction';
-import {fetchClassrooms} from '../../../redux/actions/classroomsAction'
+import { showModal } from '../../../store/actions/modalAction';
+import {fetchClassrooms} from '../../../store/actions/classroomsAction'
 import { Loader } from '../../../components/Loader';
 import { Modal } from '../../../components/Common/Admin/Modal';
 import { Classroom } from '../../../components/Modals/Classroom';

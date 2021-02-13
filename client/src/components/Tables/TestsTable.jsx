@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import { Modal } from '../Common/Admin/Modal';
 import { Test } from '../Modals/Test';
 import { useDispatch, useSelector } from 'react-redux';
-import { showIsDelete, showModal } from '../../redux/actions/modalAction';
+import { showIsDelete, showModal } from '../../store/actions/modalAction';
 import { Dropdown } from '../Common/Admin/Dropdown';
 import { Confirm } from '../Modals/Confirm';
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { logoutUser } from '../../../redux/actions/authAction'
+import { logoutUser } from '../../../store/actions/authAction'
 import { Link } from 'react-router-dom'
 
 export const Navbar = ({showHandler}) => {

@@ -1,7 +1,7 @@
 import { all } from "redux-saga/effects";
 import {WatcherCreateClassroom, WatcherFetchClassroom, WatcherFetchClassrooms} from './classroomSaga'
 import { WatcherCreateStudent, WatcherDeleteStudent, WatcherUpdateStudent } from "./studentSaga";
-import { WatcherFetchTask, WatcherFetchTasks, WatcherSaveTask } from "./taskSaga";
+import { WatcherFetchTasks, WatcherCreateTask, WatcherUpdateTask } from "./taskSaga";
 import { WatcherCreateTest, WatcherDeleteTest, WatcherFetchTests, WatcherSaveTest, WatcherUpdateTest } from "./testSaga";
 import { WatcherCreateUser, WatcherLoginUser } from "./userSaga";
 
@@ -20,9 +20,9 @@ export default function* rootSaga() {
     WatcherCreateTest(),
     WatcherUpdateTest(),
     WatcherDeleteTest(),
-    WatcherSaveTask(),
+    WatcherCreateTask(),
+    WatcherUpdateTask(),
     WatcherFetchTasks(),
-    WatcherFetchTask(),
     WatcherSaveTest()
   ])
 }

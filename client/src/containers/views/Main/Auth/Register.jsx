@@ -2,7 +2,7 @@ import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { Form, Field } from 'react-final-form'
 import {composeValidators, required, maxLength, email, minLength} from '../../../../utils/validators'
-import { createUser } from '../../../../redux/actions/authAction'
+import { createUser } from '../../../../store/actions/authAction'
 import { Link } from 'react-router-dom'
 import {Toast} from '../../../../components/Common/Toast'
 

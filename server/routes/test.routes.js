@@ -3,14 +3,16 @@ const Test = require("../models/Test");
 const router = Router();
 const auth = require("../middleware/auth.middleware");
 const { check, validationResult } = require("express-validator");
+const Task = require("../models/Task");
 
 router.post(
-  "/create",  [
+  "/create",
+  [
     check("topic", "Поле неможе бути порожнім").not().isEmpty().trim(),
     check("status", "Статус не визначений").isBoolean(),
     check("classId", "Некоректний ID").not().isEmpty().trim(),
-  ], 
-  auth, 
+  ],
+  auth,
   async (req, res) => {
     try {
       const errors = validationResult(req);
@@ -31,16 +33,18 @@ router.post(
     } catch (e) {
       res.status(500).json({ message: "Щось пішло не так" });
     }
-});
+  }
+);
 
-router.put("/update",
+router.put(
+  "/update",
   [
     check("_id", "Некоректний ID").not().isEmpty().trim(),
     check("topic", "Поле неможе бути порожнім").not().isEmpty().trim(),
     check("status", "Статус не визначений").isBoolean(),
     check("classId", "Некоректний ID").not().isEmpty().trim(),
   ],
-  auth, 
+  auth,
   async (req, res) => {
     try {
       const errors = validationResult(req);
@@ -61,13 +65,14 @@ router.put("/update",
     } catch (error) {
       res.status(500).json({ message: "Щось пішло не так" });
     }
-});
+  }
+);
 
-router.delete("/delete",
-  [
-    check("id", "Некоректний ID").not().isEmpty().trim(),
-  ],
-  auth, async (req, res) => {
+router.delete(
+  "/delete",
+  [check("id", "Некоректний ID").not().isEmpty().trim()],
+  auth,
+  async (req, res) => {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -83,6 +88,49 @@ router.delete("/delete",
     } catch (e) {
       res.status(500).json({ message: "Щось пішло не так" });
     }
+  }
+);
+
+
+router.post("/task/create", auth, async (req, res) => {
+  try {
+    const { question, answers, right, type, testId } = req.body;
+    const newTask = new Task({
+      question,
+      answers: [...answers],
+      right,
+      type,
+      testId,
+    });
+    await newTask.save();
+    res.status(201).json({ message: "Created" });
+  } catch (e) {
+    res.status(500).json({ message: "Щось пішло не так" });
+  }
+});
+
+router.put("/task/update", auth, async (req, res) => {
+  try {
+    const { _id, question, answers, right, type, testId } = req.body;
+    const task = await Task.findByIdAndUpdate(
+      _id,
+      { $set: { question, answers, right, type, testId } },
+      { new: true }
+    );
+    await task.save();
+    res.json({ message: "Змінено" });
+  } catch (e) {
+    res.status(500).json({ message: e });
+  }
+});
+
+router.get("/:id", auth, async (req, res) => {
+  try {
+    const tasks = await Task.find({ testId: req.params.id });
+    res.json(tasks);
+  } catch (e) {
+    res.status(500).json({ message: "Щось пішло не так" });
+  }
 });
 
 module.exports = router;

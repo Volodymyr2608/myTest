@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
-import { clearMessage } from '../../redux/actions/messageAction';
+import { clearMessage } from '../../store/actions/messageAction';
 
 export const Toast = ({message}) => {
   const dispatch = useDispatch()

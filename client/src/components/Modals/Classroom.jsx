@@ -1,8 +1,8 @@
 import React from 'react'
 import {Form, Field} from 'react-final-form'
 import { useDispatch } from 'react-redux'
-import { createClassroom } from '../../redux/actions/classroomsAction'
-import { hideModal } from '../../redux/actions/modalAction'
+import { createClassroom } from '../../store/actions/classroomsAction'
+import { hideModal } from '../../store/actions/modalAction'
 import { composeValidators, maxLength, required } from '../../utils/validators'
 
 

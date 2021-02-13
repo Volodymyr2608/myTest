@@ -13,6 +13,8 @@
     "@testing-library/user-event": "^12.6.0",
     "autoprefixer": "^9.8.6",
     "final-form": "^4.20.1",
+    "final-form-set-field-data": "^1.0.2",
+    "object-diff": "0.0.4",
     "postcss": "^7.0.35",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

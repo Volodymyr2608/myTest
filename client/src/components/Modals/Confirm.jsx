@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { hideISDelete, hideModal } from '../../redux/actions/modalAction'
-import { deleteStudent } from '../../redux/actions/studentAction'
-import { deleteTest } from '../../redux/actions/testsAction'
+import { hideISDelete, hideModal } from '../../store/actions/modalAction'
+import { deleteStudent } from '../../store/actions/studentAction'
+import { deleteTest } from '../../store/actions/testsAction'
 export const Confirm = ({document, documentType}) => {
 
   const dispatch = useDispatch()

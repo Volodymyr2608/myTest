@@ -2,7 +2,7 @@ import { Transition } from '@headlessui/react'
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
-import { hideISDelete, hideModal } from '../../../redux/actions/modalAction'
+import { hideISDelete, hideModal } from '../../../store/actions/modalAction'
 
 export const Modal = ({isShow, children, clearForm}) => {
 

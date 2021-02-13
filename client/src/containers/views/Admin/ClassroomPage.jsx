@@ -2,7 +2,7 @@ import React, {useState, useEffect, useCallback} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { useParams } from "react-router-dom"
 import { Loader } from '../../../components/Loader';
-import { fetchClassroom } from '../../../redux/actions/classroomAction'
+import { fetchClassroom } from '../../../store/actions/classroomAction'
 import { StudentsTable } from '../../../components/Tables/StudentsTable';
 import { TestsTable } from '../../../components/Tables/TestsTable';
 import { Toast } from '../../../components/Common/Toast';
