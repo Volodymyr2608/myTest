@@ -8,7 +8,6 @@ import {
 const initialState = {
   tasks: [],
   task: null,
-  currentTest: [],
 };
 
 export const tasksReducer = (state = initialState, action) => {

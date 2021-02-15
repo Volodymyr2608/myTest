@@ -112,6 +112,7 @@ router.post("/task/create", auth, async (req, res) => {
 router.put("/task/update", auth, async (req, res) => {
   try {
     const { _id, question, answers, right, type, testId } = req.body;
+
     const task = await Task.findByIdAndUpdate(
       _id,
       { $set: { question, answers, right, type, testId } },

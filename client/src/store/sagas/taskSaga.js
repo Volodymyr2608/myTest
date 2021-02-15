@@ -89,6 +89,7 @@ function* WorkerFetchTasks(action) {
       id: action.payload.testId,
       token: action.payload.token,
     });
+
     yield put(addTasks(payload));
     // yield put(hideLoaderAction());
   } catch (error) {

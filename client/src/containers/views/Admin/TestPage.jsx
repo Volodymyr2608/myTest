@@ -39,6 +39,7 @@ export const TestPage = () => {
   }
 
   const renderComponent = (task, index) => {
+    console.log('render Task', task)
     switch (task.type) {
       case 'radio':
         return <Radio testId={id} task={task} index={index}/>
@@ -56,6 +57,7 @@ export const TestPage = () => {
   useEffect(()=> {
     getTasks()
   }, [getTasks])
+
 
   if (loading) return <Loader/>
 
@@ -75,7 +77,7 @@ export const TestPage = () => {
         <div><span><b>Тема:</b></span> <span>{test.topic}</span></div>
         <div><span><b>Клас:</b></span> <span>{classroom.parallel}-{classroom.letter}</span></div>
       </div> */}
-      <div className='py-1 rounded-md shadow bg-white border-gray-200 border fixed left-72'>
+      <div className='py-1 rounded-md shadow bg-white border-gray-200 border fixed'>
           <ul className=''>
             <li className=' hover:bg-gray-200'><button className="focus:outline-none w-full p-2" onClick={createTaskRadio}>Одна відповідь</button></li>
             <li className=' hover:bg-gray-200'><button className="focus:outline-none w-full p-2" >Декілька відповідей</button></li>
